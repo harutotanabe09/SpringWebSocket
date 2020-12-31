@@ -14,10 +14,6 @@ configurations {
 		extendsFrom annotationProcessor
 	}
 }
-compileJava {
-	dependsOn spotlessApply
-	options.encoding = "UTF-8"
-}
 repositories {
 	mavenCentral()
 }
