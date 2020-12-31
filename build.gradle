@@ -1,0 +1,56 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'com.diffplug.gradle.spotless' version '4.5.1'
+}
+
+group = 'personal'
+sourceCompatibility = '15'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+compileJava {
+	dependsOn spotlessApply
+	options.encoding = "UTF-8"
+}
+repositories {
+	mavenCentral()
+}
+spotless {
+	java {
+		googleJavaFormat('1.8')
+		trimTrailingWhitespace()
+		endWithNewline()
+		removeUnusedImports()
+	}
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// JS Library
+	compile group: 'org.webjars', name: 'sockjs-client', version: '1.1.2'
+	compile group: 'org.webjars', name: 'webjars-locator-core', version: '0.46'
+	compile group: 'org.webjars', name: 'stomp-websocket', version: '2.3.3-1'
+	compile group: 'org.webjars', name: 'bootstrap', version: '4.5.3'
+	compile group: 'org.webjars.bower', name: 'jquery', version: '3.5.1'
+	compile group: 'org.webjars', name: 'mdbootstrap-bootstrap-material-design', version: '4.8.8'
+	compile group: 'org.webjars', name: 'font-awesome', version: '5.15.1'
+
+}
+
+test {
+	useJUnitPlatform()
+}
