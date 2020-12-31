@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.1'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
-	id 'com.diffplug.gradle.spotless' version '4.5.1'
+//	id 'com.diffplug.gradle.spotless' version '4.5.1'
 }
 
 group = 'personal'
@@ -17,6 +17,7 @@ configurations {
 repositories {
 	mavenCentral()
 }
+/*
 spotless {
 	java {
 		googleJavaFormat('1.8')
@@ -25,7 +26,7 @@ spotless {
 		removeUnusedImports()
 	}
 }
-
+*/
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
