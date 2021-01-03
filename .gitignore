@@ -41,7 +41,7 @@ out/
 .DS_Store
 .AppleDouble
 .LSOverride
-
+git
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable

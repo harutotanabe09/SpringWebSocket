@@ -74,3 +74,6 @@ https://github.com/miyabayt/spring-boot-doma2-sample
 ### IDE
 
 - [ ] パッケージ名を一括リネーム
+
+### :black_book: Heroku variable
+
