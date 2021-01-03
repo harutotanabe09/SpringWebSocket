@@ -8,3 +8,7 @@ spring:
     minIdle: 2
     initialSize: 5
     removeAbandoned: true
+  # Migrationの設定
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
