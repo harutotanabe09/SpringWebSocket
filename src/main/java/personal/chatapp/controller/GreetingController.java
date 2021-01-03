@@ -22,7 +22,6 @@ public class GreetingController {
     @SendTo("/topic/greetings")
     public Response greeting(Message message) throws Exception {
         Thread.sleep(1000);
-        greetingService.save(message);
         return new Response(
                 HtmlUtils.htmlEscape(message.getName())
                         + " : "

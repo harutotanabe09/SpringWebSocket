@@ -20,21 +20,8 @@ public class GreetingService {
     // データの一覧を返す
     public List<Message> findAll() {
         // 実行する SQL を組み立てて実行
-        String query = "SELECT * from messages";
-        List<Message> persons = jdbcTemplate.query(query, new BeanPropertyRowMapper<>(Message.class));
-        return persons;
-    }
-
-    // データを追加する
-    public Message save(Message massage) {
-        // 実行する SQL を組み立てる
-        SqlParameterSource param = new BeanPropertySqlParameterSource(massage);
-        SimpleJdbcInsert insert =
-                new SimpleJdbcInsert(jdbcTemplate)
-                        .withTableName("messages")
-                        .usingGeneratedKeyColumns("id");
-        // SQL を実行
-        insert.executeAndReturnKey(param);
-        return massage;
+        String query = "SELECT * from public.messages";
+        List<Message> message = jdbcTemplate.query(query, new BeanPropertyRowMapper<>(Message.class));
+        return message;
     }
 }
