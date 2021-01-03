@@ -62,18 +62,12 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=test -p 5432:5432 postgres
 
 https://github.com/miyabayt/spring-boot-doma2-sample
 
-### Point
-
-- [ ] Gradleに最新のバージョンをセット
-- [ ] Migrationを使ったSQLファイル
-- [ ] SpotlessCheckでコード自動生成
-- [ ] 汎用のEntityクラス
-- [ ] 暗号化スクリプトのテスト
-- [ ] 課題：pre-commitは権限必要。(chmod ug+x .git/hooks/*)
-
 ### IDE
 
 - [ ] パッケージ名を一括リネーム
 
 ### :black_book: Heroku variable
 
+Databases Set Up
+
+https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java#using-the-jdbc_database_url-in-a-spring-boot-app

@@ -1,15 +1,23 @@
 package personal.chatapp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import personal.chatapp.service.GreetingService;
 
-/** indexコントローラー */
+/**
+ * indexコントローラー
+ */
 @Controller
 public class IndexController {
 
-  @GetMapping("/")
-  public String index(Model model) {
-    return "index";
-  }
+    @Autowired
+    GreetingService greetingService;
+
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("messages", greetingService.findAll());
+        return "index";
+    }
 }
